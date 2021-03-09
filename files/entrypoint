@@ -72,9 +72,10 @@ if [ ! -f "$userConfFinalPath" ]; then
         ssh-keygen -t rsa -b 4096 -f /etc/ssh/ssh_host_rsa_key -N ''
     fi
 
+    cp /etc/ssh/ssh_host_* /home/$user/.ssh
+
     # Restrict access from other users
-    chmod 600 /etc/ssh/ssh_host_ed25519_key || true
-    chmod 600 /etc/ssh/ssh_host_rsa_key || true
+    chmod 600 /home/$user/.ssh/ssh_host_* || true
 fi
 
 # Source custom scripts, if any
