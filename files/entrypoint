@@ -73,7 +73,7 @@ if [ ! -f "$userConfFinalPath" ]; then
     fi
     
     if [ ! -f /home/.ssh]; then
-    mkdir /home/.ssh
+        mkdir /home/.ssh
     fi
     
     if [ ! -f /home/.ssh/ssh_host_ed25519_key ]; then
