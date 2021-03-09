@@ -72,15 +72,15 @@ if [ ! -f "$userConfFinalPath" ]; then
         ssh-keygen -t rsa -b 4096 -f /etc/ssh/ssh_host_rsa_key -N ''
     fi
     
-    if [ ! -f /home/.ssh]; then
+    if [ ! -f /home/.ssh ]; then
         mkdir /home/.ssh
     fi
     
     if [ ! -f /home/.ssh/ssh_host_ed25519_key ]; then
-        cp /etc/ssh/ssh_host_ed25519_key /home/.ssh/
+        cp /etc/ssh/ssh_host_ed25519_key /home/.ssh/ssh_host_ed25519_key
     fi
     if [ ! -f /home/.ssh/ssh_host_rsa_key ]; then
-        cp /etc/ssh/ssh_host_rsa_key home/.ssh/
+        cp /etc/ssh/ssh_host_rsa_key home/.ssh/ssh_host_rsa_key
     fi
 
     # Restrict access from other users
